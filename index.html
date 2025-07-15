@@ -1,4 +1,4 @@
-
+<script type="text/javascript">
         var gk_isXlsx = false;
         var gk_xlsxFileLookup = {};
         var gk_fileData = {};
@@ -37,13 +37,13 @@
         }
         return gk_fileData[filename] || "";
         }
-
-
-
-
-  
-  クラスルームシミュレーション（修正版V2）
-  
+</script>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>クラスルームシミュレーション（修正版V2）</title>
+  <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
     #login-panel, #game-panel, #gm-panel { margin: 10px 0; }
     #game-log, #gm-log { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; }
@@ -54,41 +54,41 @@
     .player-icon.alive { color: green; }
     .player-icon.dead { color: red; }
     .hidden { display: none; }
-  
+  </style>
+</head>
+<body>
+  <h1>クラスルームシミュレーション</h1>
+  <div id="login-panel">
+    <p>プレイヤーIDまたは進行役を選択:</p>
+    <select id="player-id">
+      <option value="">選択してください</option>
+      <option value="gm">進行役</option>
+      <option value="1">プレイヤー1</option>
+      <option value="2">プレイヤー2</option>
+      <option value="3">プレイヤー3</option>
+      <option value="4">プレイヤー4</option>
+      <option value="5">プレイヤー5</option>
+      <option value="6">プレイヤー6</option>
+    </select>
+    <button onclick="login()">ログイン</button>
+  </div>
+  <div id="game-panel" class="hidden">
+    <button onclick="startGame()">シミュレーション開始</button>
+    <div id="game-state"></div>
+    <div id="action-panel"></div>
+    <div id="discussion-panel"></div>
+    <div id="game-log"></div>
+  </div>
+  <div id="gm-panel" class="hidden">
+    <h2>進行役画面</h2>
+    <button onclick="startGame()">シミュレーション開始</button>
+    <div id="gm-state"></div>
+    <div id="gm-actions"></div>
+    <button id="next-phase-button" class="hidden" onclick="nextPhase()">次のフェーズに進む</button>
+    <div id="gm-log"></div>
+  </div>
 
-
-  クラスルームシミュレーション
-  
-    プレイヤーIDまたは進行役を選択:
-    
-      選択してください
-      進行役
-      プレイヤー1
-      プレイヤー2
-      プレイヤー3
-      プレイヤー4
-      プレイヤー5
-      プレイヤー6
-    
-    ログイン
-  
-  
-    シミュレーション開始
-    
-    
-    
-    
-  
-  
-    進行役画面
-    シミュレーション開始
-    
-    
-    次のフェーズに進む
-    
-  
-
-  
+  <script>
     const roles = {
       villager: { name: "住民", team: "village" },
       werewolf: { name: "妨害者", team: "werewolf" },
@@ -515,6 +515,7 @@
         nightPhase();
       }
     }
-  
-(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95f549eecdc8343f',t:'MTc1MjU0MDg2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
-
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95f549eecdc8343f',t:'MTc1MjU0MDg2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
